@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package grpcserver;
+
+service GRPCServer {
+    rpc Index(IndexRequest) returns (IndexResponse) {}
+    rpc Number(NumberRequest) returns (NumberResponse) {}
+}
+
+message IndexRequest {}
+
+message IndexResponse {
+    string data = 1;
+}
+
+message NumberRequest {
+    int64 number = 1;
+}
+
+message NumberResponse {
+    int64 number = 1;
+    string data = 2;
+}
